@@ -1,11 +1,10 @@
 package software.ulpgc.katas.io;
 
-import software.ulpgc.katas.GenreStats;
+import software.ulpgc.katas.model.GenreStats;
 
 import java.io.IOException;
 import java.io.OutputStream;
 import java.io.OutputStreamWriter;
-import java.io.Writer;
 
 public class StreamVideoGameSummaryWriter implements VideoGameSummaryWriter {
     private final OutputStream outputStream;

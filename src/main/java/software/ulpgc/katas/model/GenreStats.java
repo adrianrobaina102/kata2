@@ -1,8 +1,5 @@
-package software.ulpgc.katas;
+package software.ulpgc.katas.model;
 
-import software.ulpgc.katas.model.Genre;
-
-import java.util.HashMap;
 import java.util.Map;
 
 public class GenreStats {

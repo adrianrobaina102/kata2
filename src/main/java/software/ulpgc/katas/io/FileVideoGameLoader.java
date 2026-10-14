@@ -3,10 +3,7 @@ package software.ulpgc.katas.io;
 import software.ulpgc.katas.model.Genre;
 import software.ulpgc.katas.model.VideoGame;
 
-import java.io.File;
-import java.io.IOException;
-import java.nio.file.Files;
-import java.nio.file.Path;
+import java.io.*;
 import java.util.ArrayList;
 import java.util.List;
 
@@ -16,15 +13,18 @@ public class FileVideoGameLoader implements VideoGameLoader {
         this.file = file;
     }
     @Override
-    public List<VideoGame> load() {
-        try {
-            return load(file.toPath());
-        } catch (Exception e) {
-            throw new RuntimeException(e);
+    public List<VideoGame> load() throws IOException {
+        try (InputStream inputStream = new FileInputStream(file)) {
+            return load(inputStream);
         }
     }
-    private List<VideoGame> load(Path path) throws IOException {
-        return load(Files.readAllLines(path));
+    private List<VideoGame> load(InputStream inputStream) throws IOException {
+        try(Reader reader = new InputStreamReader(inputStream)) {
+            return  load(reader);
+        }
+    }
+    private List<VideoGame> load(Reader reader) throws IOException {
+        return load(reader.readAllLines());
     }
     private List<VideoGame> load(List<String> lines) {
         List<VideoGame> videogames = new ArrayList<>();

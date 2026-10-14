@@ -5,6 +5,7 @@ import software.ulpgc.katas.io.StreamVideoGameSummaryWriter;
 import software.ulpgc.katas.io.VideoGameLoader;
 import software.ulpgc.katas.io.VideoGameSummaryWriter;
 import software.ulpgc.katas.model.Genre;
+import software.ulpgc.katas.model.GenreStats;
 import software.ulpgc.katas.model.VideoGame;
 
 import java.io.File;
@@ -14,7 +15,7 @@ import java.util.List;
 import java.util.Map;
 
 public class Main2 {
-    public static void main(String[] args) throws IOException {
+    static void main(String[] args) throws IOException {
         File file = new File("videojuegos.csv");
         VideoGameLoader loader = new FileVideoGameLoader(file);
         List<VideoGame> games = loader.load();

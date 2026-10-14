@@ -5,10 +5,10 @@ import software.ulpgc.katas.io.UrlVideoGameLoader;
 import software.ulpgc.katas.io.VideoGameLoader;
 import software.ulpgc.katas.io.VideoGameSummaryWriter;
 import software.ulpgc.katas.model.Genre;
+import software.ulpgc.katas.model.GenreStats;
 import software.ulpgc.katas.model.VideoGame;
 
 import java.io.IOException;
-import java.net.MalformedURLException;
 import java.net.URL;
 import java.util.HashMap;
 import java.util.List;

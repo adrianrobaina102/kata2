@@ -1,6 +1,7 @@
 package software.ulpgc.katas;
 
 import software.ulpgc.katas.io.FileIrisReader;
+import software.ulpgc.katas.io.IrisAnalyzer;
 import software.ulpgc.katas.model.Iris;
 
 import java.io.File;
@@ -16,6 +17,9 @@ public class Main2 {
         for (Iris iris : listIris) {
             System.out.println(iris);
         }
+        IrisAnalyzer analyzer = new IrisAnalyzer(listIris);
+        System.out.println(analyzer.calculateSpeciesFrequency());
+        System.out.println(analyzer.calculateAverageSepalLengthBySpecies());
 
     }
 }

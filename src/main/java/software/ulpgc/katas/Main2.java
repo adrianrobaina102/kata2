@@ -9,6 +9,7 @@ import software.ulpgc.katas.model.GenreStats;
 import software.ulpgc.katas.model.VideoGame;
 
 import java.io.File;
+import java.io.FileOutputStream;
 import java.io.IOException;
 import java.util.HashMap;
 import java.util.List;
@@ -31,5 +32,11 @@ public class Main2 {
         GenreStats genreStats = new GenreStats(genreFrequencies);
         VideoGameSummaryWriter writer = new StreamVideoGameSummaryWriter(System.out);
         writer.write(genreStats);
+
+        try (FileOutputStream fos = new FileOutputStream("videojuegos_stats.txt")) {
+            VideoGameSummaryWriter fileWriter = new StreamVideoGameSummaryWriter(fos);
+            fileWriter.write(genreStats);
+            System.out.println("\n(Estadísticas guardadas también en el fichero videojuegos_stats.txt)");
+        }
     }
 }

@@ -1,5 +1,6 @@
 package software.ulpgc.katas;
 
+import software.ulpgc.katas.io.EmployeeAnalyzer;
 import software.ulpgc.katas.io.EmployeeReader;
 import software.ulpgc.katas.io.FileEmployeeReader;
 import software.ulpgc.katas.model.Employee;
@@ -16,6 +17,7 @@ public class Main2 {
         for (Employee employee : employees) {
             System.out.println(employee);
         }
-
+        EmployeeAnalyzer analyzer = new EmployeeAnalyzer(employees);
+        System.out.println(analyzer.countByGender());
     }
 }

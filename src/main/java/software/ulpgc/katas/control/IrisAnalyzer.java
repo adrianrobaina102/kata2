@@ -1,4 +1,4 @@
-package software.ulpgc.katas.io;
+package software.ulpgc.katas.control;
 
 import software.ulpgc.katas.model.Iris;
 import software.ulpgc.katas.model.Species;
@@ -14,14 +14,18 @@ public final class IrisAnalyzer {
     }
     public Map<Species, Long> calculateSpeciesFrequency()
     {
-        return listIris.stream().collect(Collectors.groupingBy(
+        return listIris.stream()
+                .filter(iris -> iris.species() != null)
+                .collect(Collectors.groupingBy(
                 Iris::species,
                 Collectors.counting()
         ));
     }
     public Map<Species, Double>  calculateAverageSepalLengthBySpecies()
     {
-        return listIris.stream().collect(
+        return listIris.stream()
+                .filter(iris -> iris.species() != null)
+                .collect(
                 Collectors.groupingBy(
                         Iris::species,
                         Collectors.averagingDouble(Iris::sepalLength)));

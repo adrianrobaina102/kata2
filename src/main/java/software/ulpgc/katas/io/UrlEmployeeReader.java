@@ -46,6 +46,6 @@ public class UrlEmployeeReader implements EmployeeReader {
         return new Employee(fields[0], genderOf(fields[1]));
     }
     private Gender genderOf(String field) {
-        return field.isEmpty() ? null : Gender.valueOf(field);
+        return field.isEmpty() ? null: Gender.valueOf(field);
     }
 }

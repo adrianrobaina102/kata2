@@ -1,4 +1,4 @@
-package software.ulpgc.katas.io;
+package software.ulpgc.katas.control;
 
 import software.ulpgc.katas.model.Employee;
 import software.ulpgc.katas.model.Gender;

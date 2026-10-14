@@ -6,5 +6,5 @@ import java.io.BufferedReader;
 import java.util.List;
 
 public interface EmployeeReader {
-    List<Employee> readAll(BufferedReader reader);
+    List<Employee> readAll();
 }

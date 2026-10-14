@@ -16,7 +16,7 @@ public class UrlEmployeeReader implements EmployeeReader {
     }
 
     @Override
-    public List<Employee> readAll(BufferedReader reader) {
+    public List<Employee> readAll() {
         try {
             return readAll(url.openStream());
         } catch (IOException e) {
@@ -39,13 +39,13 @@ public class UrlEmployeeReader implements EmployeeReader {
         lines.stream().skip(1).forEach(line -> employees.add(readAll(line)));
         return employees;
     }
-    private Employee readAll(String input) {
-        return readAll(input.split("/"));
+    private Employee readAll(String line) {
+        return readAll(line.split("/"));
     }
-    private Employee readAll(String[] input) {
-        return new Employee(input[0], genderOf(input[1]));
+    private Employee readAll(String[] fields) {
+        return new Employee(fields[0], genderOf(fields[1]));
     }
-    private Gender genderOf(String input) {
-        return input.isEmpty() ? null : Gender.valueOf(input);
+    private Gender genderOf(String field) {
+        return field.isEmpty() ? null : Gender.valueOf(field);
     }
 }

@@ -1,0 +1,11 @@
+Name/Gender/Department/Salary/City
+John Doe/Male/Engineering/75000/New York
+Jane Smith/Female/Marketing/68000/London
+Carlos Ruiz/Male/Finance/82000/Madrid
+Elena Gomez/Female/Engineering/91000/Barcelona
+Alex Taylor//HR/59000/Berlin
+Laura White/Female/Sales/64000/Paris
+David Brown/Male/IT/72000/Rome
+Sofia Marti/Female/Product/88000/Lisbon
+Marcos Diaz/Male/Support/54000/Dublin
+Lucia Perez/Female/Data Science/95000/Amsterdam
